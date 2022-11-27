@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\app\app.resource\app.resource.csproj" />
+    <ProjectReference Include="..\..\data\data.resource\data.resource.csproj" />
+    <ProjectReference Include="..\..\domain\domain.resource\domain.resource.csproj" />
+  </ItemGroup>
+
+</Project>
