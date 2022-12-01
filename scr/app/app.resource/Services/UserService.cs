@@ -57,7 +57,7 @@ namespace ApiResource.Application.Services
             }
 
             var newJwtToken = _tokenGenerator.Generator(principal.Claims);
-            var newRefreshToken = _tokenGenerator.GenerateRefreshToken();
+            var newRefreshToken = _tokenGenerator.GenerateRefreshToken(email);
 
             _tokenGenerator.DeleteRefreshToken(email, refreshToken);
             _tokenGenerator.SaveRefreshToken(email, newRefreshToken);

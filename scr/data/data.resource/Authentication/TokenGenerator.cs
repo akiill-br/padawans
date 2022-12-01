@@ -1,5 +1,6 @@
 ﻿using ApiResource.Domain.Authentication;
 using ApiResource.Domain.Entities;
+using domain.resource;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -22,14 +23,14 @@ namespace ApiResource.Infra.Data.Authentication
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, user.Id.ToString()),
+                new Claim(ClaimTypes.SerialNumber, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Email),
                 new Claim(ClaimTypes.Role, user.Role)
 
             };
 
-            var expires = DateTime.Now.AddHours(2);
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("projetoDotNetCore6"));
+            var expires = DateTime.Now.AddHours(4);
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.Secret));
 
             var tokenData = new JwtSecurityToken(
                     signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature),
@@ -37,8 +38,13 @@ namespace ApiResource.Infra.Data.Authentication
                     claims: claims
                 );
 
-            var refreshToken = GenerateRefreshToken();
-            SaveRefreshToken(user.Email, refreshToken);
+
+            var refreshToken = GetRefreshToken(user.Email);
+            if (refreshToken == null)
+            {
+                refreshToken = GenerateRefreshToken(user.Email);
+                SaveRefreshToken(user.Email, refreshToken);
+            }
 
             var token = new JwtSecurityTokenHandler().WriteToken(tokenData);
             return new
@@ -55,12 +61,36 @@ namespace ApiResource.Infra.Data.Authentication
         public dynamic Generator(IEnumerable<Claim> claims)
         {
 
+            var expires = DateTime.Now.AddHours(4);
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.Secret));
+
+            var tokenData = new JwtSecurityToken(
+                    signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature),
+                    expires: expires,
+                    claims: claims
+                );
+
+            var token = new JwtSecurityTokenHandler().WriteToken(tokenData);
+
+            return token;
+
+        }
+
+        public string GenerateRefreshToken(string email)
+        {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes("projetoDotNetCore6");
+            var key = Encoding.UTF8.GetBytes(Settings.Secret);
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, email),
+            };
+
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
+                
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddHours(4),
+                Expires = DateTime.Now.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature)
             };
@@ -68,15 +98,6 @@ namespace ApiResource.Infra.Data.Authentication
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return tokenHandler.WriteToken(token);
-
-        }
-
-        public string GenerateRefreshToken()
-        {
-            var randomNumber = new byte[32];
-            using var rng = RandomNumberGenerator.Create();
-            rng.GetBytes(randomNumber);
-            return Convert.ToBase64String(randomNumber);
         }
 
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
@@ -85,7 +106,7 @@ namespace ApiResource.Infra.Data.Authentication
             {
                 ValidateIssuerSigningKey = true,
                 ValidateLifetime = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("projetoDotNetCore6")),
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.Secret)),
                 ValidateAudience = false,
                 ValidateIssuer = false
             };

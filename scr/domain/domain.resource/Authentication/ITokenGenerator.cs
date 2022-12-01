@@ -12,7 +12,7 @@ namespace ApiResource.Domain.Authentication
     {
         dynamic Generator(User user);
         dynamic Generator(IEnumerable<Claim> claims);
-        public string GenerateRefreshToken();
+        public string GenerateRefreshToken(string email);
         ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
         void SaveRefreshToken(string username, string refreshToken);
         string GetRefreshToken(string username);
