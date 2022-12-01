@@ -12,6 +12,7 @@ namespace ApiResource.Domain.Entities
         public int Id { get; private set; }
         public string Email { get; private set; }
         public string Password { get;private set; }
+        public string Role { get; set; }
 
         public User(string email, string password)
         {
@@ -28,6 +29,8 @@ namespace ApiResource.Domain.Entities
         {
             DomainValidationException.When(string.IsNullOrEmpty(email), "Email deve ser informado!");
             DomainValidationException.When(string.IsNullOrEmpty(password), "Password deve ser informado!");
+            //DomainValidationException.When(role != "admin" || role != "user", "Role deve ser valido!");
+
             Email = email;
             Password = password;
             

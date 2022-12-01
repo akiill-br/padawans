@@ -64,6 +64,7 @@ builder.Services.AddAuthentication(authOptions =>
 }).AddJwtBearer("Bearer", options =>
 {
     options.RequireHttpsMetadata= false;
+    options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
@@ -72,6 +73,7 @@ builder.Services.AddAuthentication(authOptions =>
         ValidateAudience = false,
         ValidateIssuer = false
     };
+
 });
 
 

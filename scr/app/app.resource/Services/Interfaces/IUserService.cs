@@ -10,6 +10,6 @@ namespace ApiResource.Application.Services.Interfaces
     public interface IUserService
     {
         Task<ResultService<dynamic>> GenerateTokenAsync(UserDTO userDTO);
-
+        Task<ResultService<dynamic>> RefreshToken(string token, string refreshToken);
     }
 }

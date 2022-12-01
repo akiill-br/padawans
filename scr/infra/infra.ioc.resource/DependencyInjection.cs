@@ -27,6 +27,7 @@ namespace ApiResource.Infra.IoC
             services.AddScoped<IResourceRepository, ResourceRepository>();
             services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddScoped<IUserRepository, UserRepository>();
+
             return services;
 
         }

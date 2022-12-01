@@ -20,7 +20,6 @@ namespace ApiResource.Application.DTOs.Validations
                 .NotEmpty()
                 .NotNull()
                 .WithMessage("Password deve ser valido!");
-
         }
     }
 }

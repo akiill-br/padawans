@@ -17,13 +17,19 @@ namespace ApiResource.Infra.Data.Maps
             builder.ToTable("users");
 
             builder.HasKey(x => x.Id);
+
             builder.Property(x => x.Id)
                 .HasColumnName("ID_USER")
                 .UseIdentityColumn();
+
             builder.Property(x => x.Email)
                 .HasColumnName("USER");
+
             builder.Property(x => x.Password)
                 .HasColumnName("PASSWORD");
+
+            builder.Property(x => x.Role)
+                .HasColumnName("ROLE");
         }
     }
 }

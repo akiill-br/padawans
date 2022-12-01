@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiResource.Api.Controllers
 {
+
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ResourceController : ControllerBase
     {
+
         private readonly IResourceService _resourceService;
 
         public ResourceController(IResourceService resourceService)
@@ -17,6 +19,7 @@ namespace ApiResource.Api.Controllers
             _resourceService = resourceService;
         }
 
+        [Authorize(Roles = "user,admin")]
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] ResourceDTO resourceDTO)
         {
@@ -28,6 +31,8 @@ namespace ApiResource.Api.Controllers
             return BadRequest(result);
         }
 
+
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult> GetAsync()
         {
@@ -38,6 +43,8 @@ namespace ApiResource.Api.Controllers
             }
             return BadRequest(result);
         }
+        
+        [AllowAnonymous]
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult> GetByIdAsync(int id)
@@ -48,6 +55,8 @@ namespace ApiResource.Api.Controllers
 
             return BadRequest(result);
         }
+
+        [Authorize(Roles = "admin")]
         [HttpPut]
         public async Task<ActionResult> UpdateAsync([FromBody] ResourceDTO resourceDTO)
         {
@@ -59,6 +68,8 @@ namespace ApiResource.Api.Controllers
             return BadRequest(result);
         }
 
+
+        [Authorize(Roles = "admin")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<ActionResult> DeleteAsync(int id)

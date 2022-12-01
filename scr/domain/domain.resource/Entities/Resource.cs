@@ -107,7 +107,6 @@ namespace ApiResource.Domain.Entities
             this.ID_TRANSACTION = id_Transaction;
             this.ID_CAMPAIGN_PARENT = id_Campaign_Parent;
 
-
         }
 
 

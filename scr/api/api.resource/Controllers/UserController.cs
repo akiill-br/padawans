@@ -16,6 +16,7 @@ namespace ApiResource.Api.Controllers
             _userService = userService;
         }
 
+
         [HttpPost]
         [Route("token")]
         public async Task<ActionResult> PostAsync([FromForm] UserDTO userDTO)
@@ -27,5 +28,18 @@ namespace ApiResource.Api.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpPost]
+        [Route("refresh")]
+        public async Task<ActionResult> Refresh([FromForm] string token, string refreshToken)
+        {
+            var result = await _userService.RefreshToken(token, refreshToken);
+            if (result.IsSuccess)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result);
+        }
+
     }
 }
