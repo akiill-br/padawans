@@ -6,6 +6,7 @@ using ApiResource.Domain.Repositories;
 using ApiResource.Infra.Data.Authentication;
 using ApiResource.Infra.Data.Context;
 using ApiResource.Infra.Data.Repositories;
+using data.resource.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +28,7 @@ namespace ApiResource.Infra.IoC
             services.AddScoped<IResourceRepository, ResourceRepository>();
             services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddScoped<IUserRepository, UserRepository>();
+            Token.CreateKey(); // Cria Key 
 
             return services;
 
@@ -40,5 +42,6 @@ namespace ApiResource.Infra.IoC
                
             return services;
         }
+
     }
 }

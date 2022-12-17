@@ -1,6 +1,6 @@
 ﻿using ApiResource.Domain.Authentication;
 using ApiResource.Domain.Entities;
-using domain.resource;
+using data.resource.Authentication;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -30,7 +30,7 @@ namespace ApiResource.Infra.Data.Authentication
             };
 
             var expires = DateTime.Now.AddHours(4);
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.Secret));
+            var key = new SymmetricSecurityKey(Token.GetKey());
 
             var tokenData = new JwtSecurityToken(
                     signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature),
@@ -62,7 +62,7 @@ namespace ApiResource.Infra.Data.Authentication
         {
 
             var expires = DateTime.Now.AddHours(4);
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.Secret));
+            var key = new SymmetricSecurityKey(Token.GetKey());
 
             var tokenData = new JwtSecurityToken(
                     signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature),
@@ -79,7 +79,7 @@ namespace ApiResource.Infra.Data.Authentication
         public string GenerateRefreshToken(string email)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes(Settings.Secret);
+            var key = Token.GetKey();
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, email),
@@ -106,7 +106,7 @@ namespace ApiResource.Infra.Data.Authentication
             {
                 ValidateIssuerSigningKey = true,
                 ValidateLifetime = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.Secret)),
+                IssuerSigningKey = new SymmetricSecurityKey(Token.GetKey()),
                 ValidateAudience = false,
                 ValidateIssuer = false
             };

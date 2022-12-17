@@ -18,14 +18,14 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
-        Title = "Api Resource",
-        Version= "v1",
-        Description = "Api Resource com JWT"
+        Title = "Api Resource Token",
+        Version = "v1",
+        Description = "Api Resource Generation Token "
     });
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         Description = "Ex: Bearer {token}",
-        Name= "Authorization",
+        Name = "Authorization",
         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
         Scheme = "Bearer"
     });
@@ -64,7 +64,7 @@ builder.Services.AddAuthentication(authOptions =>
     authOptions.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer("Bearer", options =>
 {
-    options.RequireHttpsMetadata= false;
+    options.RequireHttpsMetadata = false;
     options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {

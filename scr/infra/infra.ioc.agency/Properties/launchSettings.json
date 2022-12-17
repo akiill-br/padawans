@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "infra.ioc.agency": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:58295;http://localhost:58296"
+    }
+  }
+}

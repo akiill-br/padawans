@@ -1,0 +1,57 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/Resource",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7147
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Resource"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Resource/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7147
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Resource/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/user/token",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7186
+        }
+      ],
+      "DownstreamPathTemplate": "/api/user/token"
+    },
+    {
+      "UpstreamPathTemplate": "/api/user/refresh",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7186
+        }
+      ],
+      "DownstreamPathTemplate": "/api/user/refresh"
+    }
+  ],
+
+  "GlobalConfiguration": {
+    "BaseUrl" :  "http://localhost:7087"
+  }
+}

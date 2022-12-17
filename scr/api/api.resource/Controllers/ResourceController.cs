@@ -3,7 +3,7 @@ using ApiResource.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiResource.Api.Controllers
+namespace api.resource.Controllers
 {
 
     [Authorize]
@@ -43,7 +43,7 @@ namespace ApiResource.Api.Controllers
             }
             return BadRequest(result);
         }
-        
+
         [AllowAnonymous]
         [HttpGet]
         [Route("{id}")]
