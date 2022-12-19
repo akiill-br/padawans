@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  api.resource:
+    image: ${DOCKER_REGISTRY-}apiresource
+    build:
+      context: .
+      dockerfile: api/api.resource/Dockerfile
+
+  api.token.resource:
+    image: ${DOCKER_REGISTRY-}apitokenresource
+    build:
+      context: .
+      dockerfile: api/api.token.resource/Dockerfile
+
+
+  api.database.resource:
+    image: ${DOCKER_REGISTRY-}postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    networks:
+      - backend
+    ports:
+      - 4444:5432
+    volumes:
+      - C:\dados\volumes\postgres:/var/lib/postgresql/data/pgdata
+
+  api.gateway.resource:
+    networks:
+      - backend
+    image: ${DOCKER_REGISTRY-}apigatewayresource
+    build:
+      context: .
+      dockerfile: api/api.gateway.resource/Dockerfile
+  

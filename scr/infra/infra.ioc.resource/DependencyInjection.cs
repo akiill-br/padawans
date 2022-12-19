@@ -23,7 +23,7 @@ namespace ApiResource.Infra.IoC
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options => 
-                                                        options.UseNpgsql("Server=localhost;Port=5432;Database=resource;User Id=postgres;Password=postgres;"));
+                                                        options.UseNpgsql("Server=api.database.resource;Port=5432;Database=resource;User Id=postgres;Password=postgres;"));
             
             services.AddScoped<IResourceRepository, ResourceRepository>();
             services.AddScoped<ITokenGenerator, TokenGenerator>();

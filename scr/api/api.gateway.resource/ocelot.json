@@ -4,11 +4,11 @@
       "UpstreamPathTemplate": "/api/Resource",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
 
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7147
+          "Host": "api.resource",
+          "Port": 80
         }
       ],
       "DownstreamPathTemplate": "/api/Resource"
@@ -16,11 +16,11 @@
     {
       "UpstreamPathTemplate": "/api/Resource/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7147
+          "Host": "api.resource",
+          "Port": 80
         }
       ],
       "DownstreamPathTemplate": "/api/Resource/{id}"
@@ -28,11 +28,11 @@
     {
       "UpstreamPathTemplate": "/api/user/token",
       "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7186
+          "Host": "api.token.resource",
+          "Port": 80
         }
       ],
       "DownstreamPathTemplate": "/api/user/token"
@@ -40,11 +40,11 @@
     {
       "UpstreamPathTemplate": "/api/user/refresh",
       "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7186
+          "Host": "api.token.resource",
+          "Port": 80
         }
       ],
       "DownstreamPathTemplate": "/api/user/refresh"
@@ -52,6 +52,12 @@
   ],
 
   "GlobalConfiguration": {
-    "BaseUrl" :  "http://localhost:7087"
+    "RateLimitOptions": {
+      "ClientWhitelist": [],
+      "EnableRateLimiting": true,
+      "Period": "1s",
+      "PeriodTimespan": 1,
+      "Limit": 1
+    }
   }
 }
