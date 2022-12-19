@@ -17,41 +17,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{9BDB82
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{EAE2B96C-A9C9-49B9-A316-A3DA6BA4F947}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.resource", "..\scr\api\api.resource\api.resource.csproj", "{CD8D925B-685F-4182-AB7A-9A5F20C60B25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.resource", "api\api.resource\api.resource.csproj", "{CD8D925B-685F-4182-AB7A-9A5F20C60B25}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.campaign", "..\scr\api\api.campaign\api.campaign.csproj", "{9817A618-0514-4C78-8845-06CABC15EFBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.campaign", "api\api.campaign\api.campaign.csproj", "{9817A618-0514-4C78-8845-06CABC15EFBF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.agency", "..\scr\api\api.agency\api.agency.csproj", "{36276BEE-A7AB-4DA2-A32D-3EE201A358CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.agency", "api\api.agency\api.agency.csproj", "{36276BEE-A7AB-4DA2-A32D-3EE201A358CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app.agency", "..\scr\app\app.agency\app.agency.csproj", "{B9387FCF-E018-4EE7-BE80-A7D70F2B7252}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app.agency", "app\app.agency\app.agency.csproj", "{B9387FCF-E018-4EE7-BE80-A7D70F2B7252}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app.campaign", "..\scr\app\app.campaign\app.campaign.csproj", "{F36E8EED-A602-496E-AF23-17E7B4EC2DDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app.campaign", "app\app.campaign\app.campaign.csproj", "{F36E8EED-A602-496E-AF23-17E7B4EC2DDC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app.resource", "..\scr\app\app.resource\app.resource.csproj", "{44B68F23-FED4-47FE-B8D0-AE71D21703E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app.resource", "app\app.resource\app.resource.csproj", "{44B68F23-FED4-47FE-B8D0-AE71D21703E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain.agency", "..\scr\domain\domain.agency\domain.agency.csproj", "{2BEC3CA3-B8F1-4E05-849A-E8D60589B7EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain.agency", "domain\domain.agency\domain.agency.csproj", "{2BEC3CA3-B8F1-4E05-849A-E8D60589B7EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain.campaign", "..\scr\domain\domain.campaign\domain.campaign.csproj", "{9C43128D-4A07-45BB-931D-C35C4A87783B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain.campaign", "domain\domain.campaign\domain.campaign.csproj", "{9C43128D-4A07-45BB-931D-C35C4A87783B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain.resource", "..\scr\domain\domain.resource\domain.resource.csproj", "{C0A11342-59CC-4D87-8574-73EABD11989D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain.resource", "domain\domain.resource\domain.resource.csproj", "{C0A11342-59CC-4D87-8574-73EABD11989D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data.agency", "..\scr\data\data.agency\data.agency.csproj", "{FD7ADB94-792F-4F57-AAFA-C538918702FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data.agency", "data\data.agency\data.agency.csproj", "{FD7ADB94-792F-4F57-AAFA-C538918702FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data.campaign", "..\scr\data\data.campaign\data.campaign.csproj", "{A3638E2E-60DE-44ED-9032-D77E4CD9DEC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data.campaign", "data\data.campaign\data.campaign.csproj", "{A3638E2E-60DE-44ED-9032-D77E4CD9DEC1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data.resource", "..\scr\data\data.resource\data.resource.csproj", "{7EA2B93E-60C4-4E9B-8895-7B51A470C407}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data.resource", "data\data.resource\data.resource.csproj", "{7EA2B93E-60C4-4E9B-8895-7B51A470C407}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra.ioc.agency", "..\scr\infra\infra.ioc.agency\infra.ioc.agency.csproj", "{67825EA3-93E6-4167-8FF0-E7C1C38BBBE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra.ioc.agency", "infra\infra.ioc.agency\infra.ioc.agency.csproj", "{67825EA3-93E6-4167-8FF0-E7C1C38BBBE3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra.ioc.campaign", "..\scr\infra\infra.ioc.campaign\infra.ioc.campaign.csproj", "{5E9F4992-FA2D-4363-B996-469A966D696C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra.ioc.campaign", "infra\infra.ioc.campaign\infra.ioc.campaign.csproj", "{5E9F4992-FA2D-4363-B996-469A966D696C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra.ioc.resource", "..\scr\infra\infra.ioc.resource\infra.ioc.resource.csproj", "{5A7D8AB2-365F-417E-B964-7A8CC39B190F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra.ioc.resource", "infra\infra.ioc.resource\infra.ioc.resource.csproj", "{5A7D8AB2-365F-417E-B964-7A8CC39B190F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tdd.resource", "..\test\tdd.resource\tdd.resource.csproj", "{19DFF295-9A87-47DE-A12C-A69C4648F6DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.gateway.resource", "..\scr\api\api.gateway.resource\api.gateway.resource.csproj", "{72BF8164-4B35-4ED8-9817-5AECD5D3FDE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.gateway.resource", "api\api.gateway.resource\api.gateway.resource.csproj", "{72BF8164-4B35-4ED8-9817-5AECD5D3FDE5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.token.resource", "..\scr\api\api.token.resource\api.token.resource.csproj", "{FF3BEA97-4266-4B8A-8D7C-AE4301D3E529}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.token.resource", "api\api.token.resource\api.token.resource.csproj", "{FF3BEA97-4266-4B8A-8D7C-AE4301D3E529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
