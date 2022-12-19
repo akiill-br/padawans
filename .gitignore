@@ -8,6 +8,10 @@
 /scr/api/api.campaign/obj
 /scr/api/api.resource/bin/Debug/net6.0
 /scr/api/api.resource/obj
+/scr/api/api.gateway.resource/bin/Debug/net6.0
+/scr/api/api.gateway.resource/obj
+/scr/api/api.token.resource/bin/Debug/net6.0
+/scr/api/api.token.resource/obj
 /scr/app/app.agency/bin/Debug/net6.0
 /scr/app/app.agency/obj
 /scr/app/app.campaign/bin/Debug/net6.0
@@ -35,3 +39,5 @@
 /solution/.vs
 /test/tdd.resource/bin/Debug/net6.0
 /test/tdd.resource/obj
+/.vs/padawans/v17
+/scr/api/api.gateway.resource/bin/Debug/net7.0
