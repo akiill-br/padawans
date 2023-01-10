@@ -53,6 +53,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.gateway.resource", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.token.resource", "..\scr\api\api.token.resource\api.token.resource.csproj", "{FF3BEA97-4266-4B8A-8D7C-AE4301D3E529}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.oauth.github.resource", "api.oauth.github.resource\api.oauth.github.resource.csproj", "{23C1DDF5-A3CD-4430-A840-7CE65591AA49}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{ED790729-7E2B-45AB-A3A8-56BEC9B8C963}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +135,14 @@ Global
 		{FF3BEA97-4266-4B8A-8D7C-AE4301D3E529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF3BEA97-4266-4B8A-8D7C-AE4301D3E529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF3BEA97-4266-4B8A-8D7C-AE4301D3E529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C1DDF5-A3CD-4430-A840-7CE65591AA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C1DDF5-A3CD-4430-A840-7CE65591AA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C1DDF5-A3CD-4430-A840-7CE65591AA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C1DDF5-A3CD-4430-A840-7CE65591AA49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED790729-7E2B-45AB-A3A8-56BEC9B8C963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED790729-7E2B-45AB-A3A8-56BEC9B8C963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED790729-7E2B-45AB-A3A8-56BEC9B8C963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED790729-7E2B-45AB-A3A8-56BEC9B8C963}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,6 +171,7 @@ Global
 		{19DFF295-9A87-47DE-A12C-A69C4648F6DA} = {1DC6429E-46D7-4C46-9759-C3EFABB68252}
 		{72BF8164-4B35-4ED8-9817-5AECD5D3FDE5} = {F101AB03-6F43-4663-85E7-24E4387C8E98}
 		{FF3BEA97-4266-4B8A-8D7C-AE4301D3E529} = {F101AB03-6F43-4663-85E7-24E4387C8E98}
+		{23C1DDF5-A3CD-4430-A840-7CE65591AA49} = {F101AB03-6F43-4663-85E7-24E4387C8E98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7426EB43-7537-4A61-8BA5-BA4ED903EF0F}

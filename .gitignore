@@ -42,3 +42,14 @@
 /.vs/padawans/v17
 /scr/api/api.gateway.resource/bin/Debug/net7.0
 /scr/.vs/padawans
+/solution/api.oauth.github.resource/.env.json
+/scr/api/api.oauth.github.resource/obj/Debug/net6.0
+/scr/api/api.oauth.github.resource/obj
+/scr/api/api.oauth.github.resource/api.oauth.github.resource.csproj
+/scr/api/api.oauth.github.resource/bin/Debug/net6.0
+/scr/.vs/ProjectEvaluation
+/scr/api/api.token.resource/bin/Debug/net7.0
+/scr/bin/Debug
+/scr/obj
+/solution/api.oauth.github.resource/obj
+/solution/obj/Docker

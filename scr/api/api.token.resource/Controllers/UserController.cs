@@ -3,7 +3,7 @@ using ApiResource.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace api.resource.token.Controllers
+namespace api.token.resource.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -15,7 +15,6 @@ namespace api.resource.token.Controllers
         {
             _userService = userService;
         }
-
 
         [HttpPost]
         [Route("token")]

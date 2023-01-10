@@ -55,6 +55,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.token.resource", "api\a
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A775DE65-F7DF-42AD-93EE-7D8AEA47B12F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.oauth.github.resource", "api\api.oauth.github.resource\api.oauth.github.resource.csproj", "{2DF1BB23-A52E-478C-BA4E-072E78F633F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,6 +139,10 @@ Global
 		{A775DE65-F7DF-42AD-93EE-7D8AEA47B12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A775DE65-F7DF-42AD-93EE-7D8AEA47B12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A775DE65-F7DF-42AD-93EE-7D8AEA47B12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF1BB23-A52E-478C-BA4E-072E78F633F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF1BB23-A52E-478C-BA4E-072E78F633F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF1BB23-A52E-478C-BA4E-072E78F633F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF1BB23-A52E-478C-BA4E-072E78F633F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +171,7 @@ Global
 		{19DFF295-9A87-47DE-A12C-A69C4648F6DA} = {1DC6429E-46D7-4C46-9759-C3EFABB68252}
 		{72BF8164-4B35-4ED8-9817-5AECD5D3FDE5} = {F101AB03-6F43-4663-85E7-24E4387C8E98}
 		{FF3BEA97-4266-4B8A-8D7C-AE4301D3E529} = {F101AB03-6F43-4663-85E7-24E4387C8E98}
+		{2DF1BB23-A52E-478C-BA4E-072E78F633F4} = {F101AB03-6F43-4663-85E7-24E4387C8E98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7426EB43-7537-4A61-8BA5-BA4ED903EF0F}

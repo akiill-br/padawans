@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  api.oauth.github.resource:
+    image: ${DOCKER_REGISTRY-}apioauthgithubresource
+    build:
+      context: .
+      dockerfile: api.oauth.github.resource/Dockerfile

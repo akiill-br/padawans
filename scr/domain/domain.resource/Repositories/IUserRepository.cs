@@ -10,5 +10,6 @@ namespace ApiResource.Infra.Data.Repositories
     public interface IUserRepository
     {
         Task<User> GetUserByEmailAndPassowrd(string email, string password);
+        Task<User> CreateUserAsync(string email, string password);
     }
 }

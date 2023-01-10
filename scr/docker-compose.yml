@@ -24,8 +24,9 @@ services:
       - backend
     ports:
       - 4444:5432
+    
     volumes:
-      - C:\dados\volumes\postgres:/var/lib/postgresql/data/pgdata
+      - C:\dados\volumes\postgres:/var/lib/postgresql/data/pgdata #Criar Volume - Dir Host:Dir Container
 
   api.gateway.resource:
     networks:
@@ -35,3 +36,12 @@ services:
       context: .
       dockerfile: api/api.gateway.resource/Dockerfile
   
+
+  api.oauth.github.resource:
+    image: ${DOCKER_REGISTRY-}apioauthgithubresource
+    networks:
+      - backend
+    build:
+      context: .
+      dockerfile: api/api.oauth.github.resource/Dockerfile
+

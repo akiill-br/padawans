@@ -6,6 +6,8 @@ using ApiResource.Domain.Repositories;
 using ApiResource.Infra.Data.Authentication;
 using ApiResource.Infra.Data.Context;
 using ApiResource.Infra.Data.Repositories;
+using app.resource.Services;
+using app.resource.Services.Interfaces;
 using data.resource.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +30,7 @@ namespace ApiResource.Infra.IoC
             services.AddScoped<IResourceRepository, ResourceRepository>();
             services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IOAuthGitHubService, OAuthGitHubService>();
             Token.CreateKey(); // Cria Key 
 
             return services;
@@ -39,7 +42,8 @@ namespace ApiResource.Infra.IoC
             services.AddAutoMapper(typeof(DomainToDtoMapping));
             services.AddScoped<IResourceService, ResourceService>();
             services.AddScoped<IUserService, UserService>();
-               
+            services.AddScoped<IOAuthGitHubService, OAuthGitHubService>();
+
             return services;
         }
 

@@ -48,7 +48,19 @@
         }
       ],
       "DownstreamPathTemplate": "/api/user/refresh"
-    }
+    },
+    {
+      "UpstreamPathTemplate": "/api/OAuth/GitHub",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api.oauth.github.resource",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/OAuth/GitHub"
+    },
   ],
 
   "GlobalConfiguration": {

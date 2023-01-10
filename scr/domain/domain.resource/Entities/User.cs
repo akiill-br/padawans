@@ -17,6 +17,7 @@ namespace ApiResource.Domain.Entities
         public User(string email, string password)
         {
             Validation(email, password);
+            Role = "user";
         }
         public User(int id, string email, string password)
         {
